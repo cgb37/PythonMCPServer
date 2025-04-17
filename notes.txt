@@ -1,0 +1,60 @@
+
+
+[2025-04-17T11:27:13.145738]
+Book ISBN 075091291X: "The Battle of Hastings" by Jim Bradbury (1998, Sutton Publishing Ltd). This is a historical book about the famous 1066 battle that changed English history when William the Conqueror defeated King Harold II. The battle marked the beginning of Norman rule in England.
+
+
+
+[2025-04-17T12:52:15.750875]
+
+Title: Harold and William: The Battle for England, A.D. 1064-1066
+ISBN: 9780815411659
+Source: WorldCat (https://search.worldcat.org/search?q=9780815411659)
+Description: A historical account focusing on the events leading up to and including the Battle of Hastings in 1066, covering the rivalry between Harold Godwinson and William of Normandy for the English throne.
+Metadata: ["author": "Gracie, F. W.", "publisher": "Scarecrow Press", "year": "2003", "subject": "History", "subject": "Norman Conquest", "subject": "Battle of Hastings", "subject": "Medieval England"]
+
+
+[2025-04-17T13:01:59.122011]
+Title: The Host
+ISBN: 9780316015035
+Source: Amazon.com (https://www.amazon.com/Host-Stephenie-Meyer/dp/0316068055) and Wikipedia (https://en.wikipedia.org/wiki/The_Host_(novel))
+Description: A 2008 science fiction romance novel by Stephenie Meyer about Earth being invaded by a parasitic alien race known as "Souls." The story follows one Soul named Wanderer who encounters the unusual situation where her human host, Melanie Stryder, refuses to relinquish control of her mind, creating an internal struggle for body sovereignty and unexpected alliances.
+Metadata: ["Author: Stephenie Meyer", "Publication Date: May 6, 2008", "Genre: Science Fiction/Romance", "Publisher: Little, Brown and Company", "Pages: 619", "Initial Print Run: 750,000 copies", "Adapted into film in 2013 directed by Andrew Niccol"]
+
+[2025-04-17T13:07:16.890545]
+
+Title: Agincourt: Henry V and the Battle That Made England
+ISBN: 9780316015035
+Source: Amazon.com (https://www.amazon.com/Agincourt-Henry-Battle-That-England/dp/0316015032)
+Description: This historical work by Juliet Barker examines the Battle of Agincourt (1415), chronicling how the outnumbered English forces under Henry V defeated the French. The book goes beyond the battlefield to explore medieval life, military strategy, and the political context of the Hundred Years' War. Barker uses extensive research to separate legend from historical fact while providing a gripping narrative of this pivotal battle.
+Metadata: {"author": "Juliet Barker", "publisher": "Little, Brown and Company", "publication_date": "June 14, 2006", "format": "Hardcover", "pages": "464", "language": "English"}
+
+
+[2025-04-17T13:15:46.154949]
+Title: Agincourt: Henry V and the Battle That Made England
+ISBN: 9780316015035
+Source: AbeBooks, Goodreads, Publisher's Weekly
+Description: From a master historian comes an astonishing chronicle of life in medieval Europe and the battle that altered the course of an empire. Although almost six centuries old, the Battle of Agincourt still captivates the imaginations of men and women on both sides of the Atlantic. The book examines this remarkable 1415 battle where the English, despite being outnumbered six to one, achieved a historic victory against the French. Juliet Barker casts aside legend to reveal the truth behind Agincourt, painting a gripping narrative of the October 1415 clash while taking readers beyond the battlefield into the medieval world.
+Metadata: {
+  "author": "Juliet Barker",
+  "publisher": "Little, Brown and Company",
+  "publication_date": "June 14, 2006",
+  "format": "Hardcover",
+  "pages": "464",
+  "language": "English",
+  "genre": ["History", "Military History", "Medieval History"]
+}
+
+[2025-04-17T13:27:38.389116]
+Title: The Book of Virtues: A Treasury of Great Moral Stories
+ISBN: 9780060162153
+Source: [Wikipedia, https://en.wikipedia.org/wiki/The_Book_of_Virtues], [Simon & Schuster, https://www.simonandschuster.com/books/The-Book-of-Virtues/William-J-Bennett/9781439126257]
+Description: A 1993 anthology edited by William J. Bennett containing 370 passages across ten chapters, each devoted to a different virtue: self-discipline, compassion, responsibility, friendship, work, courage, perseverance, honesty, loyalty, and faith. The book includes selections from various sources including the Bible, Greek mythology, Aesop's Fables, Shakespeare, and works from authors such as Charles Dickens, F. Scott Fitzgerald, and Oscar Wilde.
+Metadata: [Published in November 1993 by Simon & Schuster], [Became a New York Times Best Seller for more than 80 weeks], [Bennett served as Secretary of Education under President Reagan]
+
+[2025-04-17T13:30:37.839942]
+Title: The English Resistance: The Underground War Against the Normans
+ISBN: 9780752428277
+Source: [Amazon.co.uk, https://www.amazon.co.uk/English-Resistance-Underground-Against-Normans/dp/0752428276], [Internet Archive, https://archive.org/details/englishresistanc0000rexp]
+Description: This book by Peter Rex examines how the English people rebelled against Norman rule following the 1066 conquest. It tells the stories of resistance leaders like Hereward the Wake and Eadric the Wild, while also exploring William the Conqueror's pacification attempts including the "harrying of the north." The author challenges the traditional narrative that the English quickly submitted to Norman rule.
+Metadata: [Author: Peter Rex], [Publisher: Tempus Publishing], [Publication Date: January 1, 2004], [Format: Paperback], [Pages: 224], [Subject: Great Britain - History - Norman period, 1066-1154], [Language: English]
