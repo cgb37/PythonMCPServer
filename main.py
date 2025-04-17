@@ -6,59 +6,80 @@ import webbrowser
 # Create an MCP server
 mcp = FastMCP("AI Sticky Notes")
 
-NOTES_FILE = os.path.join(os.path.dirname(__file__), "notes.txt")
 
-def ensure_file():
-    if not os.path.exists(NOTES_FILE):
-        with open(NOTES_FILE, "w") as f:
-            f.write("")
-
-
-@mcp.tool()
-def add_note(message: str) -> str:
+def create_title_slug(title: str) -> str:
     """
-    Add a sticky note to the notes file. Supports direct ISBN lookup format.
+    Create a slug from the title for use in filenames.
 
     Parameters:
-        message (str): The content of the note to be added.
+        title (str): The title to be slugged.
 
     Returns:
-        str: A confirmation message indicating the note was saved, or the response from Claude.
+        str: The slugified version of the title.
+    """
+    import re
+    slug = re.sub(r'[^a-zA-Z0-9]+', '-', title).strip('-')
+    return slug
+
+@mcp.tool()
+def add_note(message: str, claude_response: str) -> str:
+    """
+    Save any prompt and its response as a markdown note file for future reference.
+    This tool can be used to store information about any topic - technical, historical,
+    personal, educational, etc.
+
+    To save a note, start your question with:
+    "Please write a sticky note for the following prompt:"
+    followed by any question or topic you want to save.
+
+    The note will be formatted in markdown with:
+    - Title (your prompt)
+    - Date
+    - Your original prompt
+    - Claude's detailed response
+
+    The goal is to build a personal knowledge base of questions and answers
+    that you can refer back to later.
+
+    Parameters:
+        message (str): The initial prompt/message (your question about any topic)
+        claude_response (str): Claude's response to save for future reference
+
+    Returns:
+        str: A confirmation message indicating the note was saved.
     """
     import datetime
+    import os
 
-    ensure_file()
+    # Create notes directory if it doesn't exist
+    notes_dir = os.path.join(os.path.dirname(__file__), "notes")
+    os.makedirs(notes_dir, exist_ok=True)
 
-    with open(NOTES_FILE, "a") as f:
-        timestamp = datetime.datetime.now().isoformat()
-        f.write(f"\n[{timestamp}]\n")
+    # Clean the message and create a slug for the filename
+    cleaned_message = message.strip()
+    title_slug = create_title_slug(cleaned_message[:50])  # Use first 50 chars for filename
+    timestamp = datetime.datetime.now()
+    
+    # Create filename with timestamp to ensure uniqueness
+    filename = f"{timestamp.strftime('%Y%m%d_%H%M%S')}_{title_slug}.md"
+    filepath = os.path.join(notes_dir, filename)
 
-        cleaned_message = message.strip()
-        isbn_prefix = "please write a sticky note about isbn:"
-        if cleaned_message.lower().startswith(isbn_prefix):
-            isbn_candidate = cleaned_message[len(isbn_prefix):].strip()
-            if isbn_candidate.isdigit() and len(isbn_candidate) in [10, 13]:
-                worldcat_url = f"https://search.worldcat.org/search?q={isbn_candidate}"
-                response = (
-                    f"Please search the web with: {worldcat_url}\n\n"
-                    f"Title: \n"
-                    f"ISBN: {isbn_candidate}\n"
-                    f"Source: WorldCat\n"
-                    f"Description: \n"
-                    f"Metadata: []"
-                )
-                print(f"🔍 Opening browser to {worldcat_url}")
-                f.write(response + "\n")
-                webbrowser.open(worldcat_url)
-                return "Sticky note with ISBN added."
-            else:
-                f.write("Invalid ISBN format.\n")
-                return "Invalid ISBN format."
-        elif cleaned_message.endswith("?"):
-            f.write(f"Q: {cleaned_message}\n")
-            response = "(Claude's response would go here.)"
-            f.write(f"A: {response}\n")
-            return "Question and response saved."
-        else:
-            f.write(cleaned_message + "\n")
-            return "Note saved."
+    # Create markdown content
+    markdown_content = f"""# {cleaned_message}
+
+## Date
+{timestamp.strftime('%Y-%m-%d %H:%M:%S')}
+
+## Initial Prompt
+{cleaned_message}
+
+## Claude Response
+{claude_response}
+"""
+
+    # Write the markdown file
+    with open(filepath, "w") as f:
+        f.write(markdown_content)
+
+    return f"Note saved as {filename}"
+
