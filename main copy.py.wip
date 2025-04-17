@@ -1,0 +1,88 @@
+# main.py
+from mcp.server.fastmcp import FastMCP
+import os
+import webbrowser
+
+# Create an MCP server
+mcp = FastMCP("AI Sticky Notes")
+
+NOTES_FILE = os.path.join(os.path.dirname(__file__), "notes.txt")
+
+def ensure_file():
+    if not os.path.exists(NOTES_FILE):
+        with open(NOTES_FILE, "w") as f:
+            f.write("")
+
+def extract_and_validate_isbn(message: str) -> tuple[bool, str]:
+    """
+    Extract and validate ISBN from a message.
+    
+    Parameters:
+        message (str): The message potentially containing an ISBN
+        
+    Returns:
+        tuple[bool, str]: (is_valid, isbn_number or error_message)
+    """
+    isbn_prefix = "please write a sticky note about isbn:"
+    if not message.lower().startswith(isbn_prefix):
+        return (False, "")
+        
+    isbn_candidate = message[len(isbn_prefix):].strip()
+    if isbn_candidate.isdigit() and len(isbn_candidate) in [10, 13]:
+        print(f"Valid ISBN detected: {isbn_candidate}")
+        return (True, isbn_candidate)
+    return (False, "Invalid ISBN format")
+
+def open_worldcat_search(isbn: str) -> str:
+    """
+    Open WorldCat search for a given ISBN.
+    
+    Parameters:
+        isbn (str): The ISBN to search for
+        
+    Returns:
+        str: The WorldCat URL
+    """
+    worldcat_url = f"https://search.worldcat.org/search?q={isbn}"
+    print(f"🔍 Opening browser to {worldcat_url}")
+    webbrowser.open(worldcat_url)
+    return worldcat_url
+
+@mcp.tool()
+def add_note(message: str) -> str:
+    """
+    Add a sticky note to the notes file. Supports direct ISBN lookup format.
+
+    Parameters:
+        message (str): The content of the note to be added.
+
+    Returns:
+        str: A confirmation message indicating the note was saved.
+    """
+    import datetime
+
+    ensure_file()
+    cleaned_message = message.strip()
+    
+    with open(NOTES_FILE, "a") as f:
+        timestamp = datetime.datetime.now().isoformat()
+        f.write(f"\n[{timestamp}]\n")
+
+        is_valid_isbn, isbn_or_error = extract_and_validate_isbn(cleaned_message)
+        if is_valid_isbn:
+            worldcat_url = open_worldcat_search(isbn_or_error)
+            # Use a template that Claude should not override
+            note_template = f"""Title: 
+ISBN: {isbn_or_error}
+Source: WorldCat ({worldcat_url})
+Description: 
+Metadata: []"""
+            f.write(note_template + "\n")
+            return f"ISBN {isbn_or_error} note template added. Please check WorldCat for details."
+        elif isbn_or_error == "Invalid ISBN format":
+            f.write("Invalid ISBN format.\n")
+            return "Invalid ISBN format."
+        else:
+            # For non-ISBN notes, just save the message directly
+            f.write(cleaned_message + "\n")
+            return "Note saved."
