@@ -58,3 +58,30 @@ ISBN: 9780752428277
 Source: [Amazon.co.uk, https://www.amazon.co.uk/English-Resistance-Underground-Against-Normans/dp/0752428276], [Internet Archive, https://archive.org/details/englishresistanc0000rexp]
 Description: This book by Peter Rex examines how the English people rebelled against Norman rule following the 1066 conquest. It tells the stories of resistance leaders like Hereward the Wake and Eadric the Wild, while also exploring William the Conqueror's pacification attempts including the "harrying of the north." The author challenges the traditional narrative that the English quickly submitted to Norman rule.
 Metadata: [Author: Peter Rex], [Publisher: Tempus Publishing], [Publication Date: January 1, 2004], [Format: Paperback], [Pages: 224], [Subject: Great Britain - History - Norman period, 1066-1154], [Language: English]
+
+[2025-04-17T15:14:43.014723]
+ISBN:9781843548072 - "The Art of Travel" by Alain de Botton. A philosophical exploration of why we travel and how we might get more fulfillment from our journeys. Published by Penguin Books.
+
+[2025-04-17T15:21:56.766357]
+Title: [Not found in search results]
+ISBN: 9780670696017
+Source: ["WorldCat.org", "https://search.worldcat.org/search?q=9780670696017"] 
+Description: This book was published by Viking Press, an imprint founded in 1925 that became part of Penguin. The specific details about this book were not found in the search results.
+Metadata: ["Format: Unknown", "Publisher: Viking Press", "Publication Date: Unknown"]
+
+[2025-04-17T15:32:48.109035]
+Title: The Magic of Thinking Big
+ISBN: 9780670696017
+Source: [Abebooks.com, https://www.abebooks.com/book-search/title/magic-thinking-big/author/david-schwartz/first-edition/], [Wikipedia, https://en.wikipedia.org/wiki/The_Magic_of_Thinking_Big]  
+Description: A self-help classic by David J. Schwartz, PhD, originally published in 1959. The book presents methods for personal and professional success through positive thinking. It provides a program for getting the most out of your job, relationships, and community involvement. This is a hardcover edition published by Viking Press.
+Metadata: [First published 1959, Viking Press edition, Self-help, Personal development, Motivational, Over 6 million copies sold worldwide]
+
+[2025-04-17T15:37:26.127379]
+ISBN: 9780670696017 - "Holy the Firm" by Annie Dillard. Published in 1977, this is a profound meditation on time, reality, suffering and faith. Written during Dillard's stay on an island in Puget Sound, this slim volume explores profound theological questions through beautiful prose. The book includes reflections on a moth consumed in a candle flame and a seven-year-old girl burned in an airplane accident. Dillard, who won the Pulitzer Prize for "Pilgrim at Tinker Creek," spent 14 months writing this short but powerful work.
+
+[2025-04-17T15:39:15.165534]
+Title: Shamans Through Time: 500 Years on the Path to Knowledge
+ISBN: 9780520082939
+Source: ["Amazon.com", "https://www.amazon.com/Shamans-Through-Time-Years-Knowledge/dp/1585420913"]
+Description: A collection of essays tracing Western civilization's efforts to understand shamanic practices around the world. The book features writings from over 60 contributors including missionaries, anthropologists, and ethnographers spanning from 1535 to 2000, with essays by notable thinkers such as Claude Lévi-Strauss, Black Elk, Carlos Castaneda, and Franz Boas.
+Metadata: ["Editors: Jeremy Narby and Francis Huxley", "Publisher: University of California Press", "Publication Date: 2001", "324 pages", "Anthology", "Anthropology", "Indigenous Studies"]
